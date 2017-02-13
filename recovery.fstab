@@ -1,15 +1,25 @@
 # mount point	fstype    device    	[device2]
 
-/boot      emmc  /dev/bootimg
-/recovery  emmc  /dev/recovery
-/system    ext4  /dev/block/mmcblk0p3
-/cache     ext4  /dev/block/mmcblk0p4
-/data      ext4  /dev/block/mmcblk0p5
-/emmc	   vfat  /dev/block/mmcblk0p6  flags=display="Phone Storage";settingsstorage
-/sdcard    vfat  /dev/block/mmcblk1p1  flags=display="SD Card";storage;removable
-/sd-ext    auto  /dev/block/mmcblk1p2
-/nvram     emmc  /dev/nvram            flags=display="Nvram";backup=1
-/uboot     emmc  /dev/uboot            flags=display="Uboot";backup=1
+/boot   	emmc   	/dev/block/platform/soc0/e0000000.noc/by-name/ImcPartID071   	
+/recovery 	emmc  	/dev/block/platform/soc0/e0000000.noc/by-name/ImcPartID121 	    
+/misc    	emmc  	/dev/block/platform/soc0/e0000000.noc/by-name/ImcPartID074    	
+/cache   	ext4  	/dev/block/platform/soc0/e0000000.noc/by-name/ImcPartID070   	
+/system  	ext4  	/dev/block/platform/soc0/e0000000.noc/by-name/ImcPartID068  	
+/data    	ext4  	/dev/block/platform/soc0/e0000000.noc/by-name/ImcPartID069    	
+  
+#/sdcard datamedia /dev/null defaults;defaults
+/external_sd auto /dev/block/mmcblk1p1 defaults;defaults
+
+#/boot      emmc  /dev/bootimg
+#/recovery  emmc  /dev/recovery
+#/system    ext4  /dev/block/mmcblk0p3
+#/cache     ext4  /dev/block/mmcblk0p4
+#/data      ext4  /dev/block/mmcblk0p5
+#/emmc	   vfat  /dev/block/mmcblk0p6  flags=display="Phone Storage";settingsstorage
+#/sdcard    vfat  /dev/block/mmcblk1p1  flags=display="SD Card";storage;removable
+#/sd-ext    auto  /dev/block/mmcblk1p2
+#/nvram     emmc  /dev/nvram            flags=display="Nvram";backup=1
+#/uboot     emmc  /dev/uboot            flags=display="Uboot";backup=1
 
 #/boot			emmc	/dev/block/platform/mtk-msdc.0/by-name/boot		flags=display="Boot";backup=1
 #/recovery		emmc	/dev/block/platform/mtk-msdc.0/by-name/recovery	flags=display="Recovery";backup=1
